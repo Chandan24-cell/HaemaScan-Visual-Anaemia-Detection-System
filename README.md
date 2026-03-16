@@ -18,7 +18,8 @@ diagnostic confidence.
 
 ### Demo & Screenshots
 
-![Dashboard](images/dashboard.png)
+![Dashboard](<dashboard.png/>
+)
 ![Before SMOTE](images/before_smote.png)
 ![After SMOTE](images/after_smote.png)
 ![Feature Importance](images/feature_importance.png)
@@ -153,10 +154,10 @@ HaemaScan is intended for **research and demonstration purposes only**. It is no
 
 ## 👥 Development Team
 
-- Chandan Kumar Sah (II AIML)
-- Rakesh Rauniyar (II CSE-D)
-- Yogesh Raj Sah (II CSE-D)
-- Sushil Kumar Patel (II CSE-D)
+- Chandan Kumar Sah (II AIML) - Lead / ML
+- Rakesh Rauniyar (II CSE-D) - Backend Developer
+- Yogesh Raj Sah (II CSE-D) - Frontend Developer
+- Sushil Kumar Patel (II CSE-D) - UI / AI / Integration
 
 Project developed under the guidance of KPRIET.
 
