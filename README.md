@@ -18,6 +18,16 @@ diagnostic confidence.
 
 ### Demo & Screenshots
 <img width="1438" height="818" alt="Screenshot 2026-03-17 at 2 37 27 AM" src="https://github.com/user-attachments/assets/ad7887dd-09e2-46a8-80f0-99329202c9af" />
+<img width="1242" height="642" alt="_Random-forest" src="https://github.com/user-attachments/assets/6a96f578-8b56-44a1-a89b-15d9946d8720" />
+<img width="695" height="553" alt="after_smote" src="https://github.com/user-attachments/assets/c631f2a3-6241-4bfe-911c-823202e5fce2" />
+<img width="695" height="547" alt="before_smote" src="https://github.com/user-attachments/assets/d7a71af3-9e19-4c5c-9d20-425acfef4b12" />
+<img width="903" height="819" alt="cbc-dashboard" src="https://github.com/user-attachments/assets/16216aed-30d5-4acf-a114-e3dfdee43668" />
+<img width="2055" height="2030" alt="dashboard" src="https://github.com/user-attachments/assets/4b63e88c-5f99-4259-a8f2-3c593b31b1bf" />
+<img width="921" height="533" alt="feature_importance" src="https://github.com/user-attachments/assets/fde818c5-48eb-48bb-bf73-e5bcdd5a8203" />
+<img width="1212" height="687" alt="Screenshot 2026-03-17 at 2 53 45 AM" src="https://github.com/user-attachments/assets/f0aeffce-2c91-4d3b-b162-d906c82ad45c" />
+<img width="1212" height="687" alt="Screenshot 2026-03-17 at 2 53 45 AM" src="https://github.com/user-attachments/assets/6ed2b5c7-8e06-4f6d-9ada-c88b1be6960e" />
+
+<img width="1440" height="900" alt="fusion_model" src="https://github.com/user-attachments/assets/5afe8125-adf0-4ab4-ad01-25f8baf3e5fa" />
 
 
 ## 🚀 Key Features
