@@ -16,15 +16,13 @@ Anemia affects billions of people worldwide, yet it often remains undiagnosed du
 
 diagnostic confidence.
 
-## 🖼️ Demo & Screenshots
-![Dashboard](/Users/chandankumarsah/HaemaScan-Visual-Anaemia-Detection-System/images/Screenshot 2026-03-16 at 7.37.47 PM.png)
-![Vision Upload](images/vision-upload.png)
-![Results](images/results.png)
-![SMOTE Balance](images/Before_SMOTE.png) ![After SMOTE](images/After_SMOTE.png)
-![Feature Importance](images/Feature_importance.png)
+### Demo & Screenshots
 
-> **Live Demo**: [Try HaemaScan](https://haemascan.railway.app) *Update with deployed URL*
-
+![Dashboard](images/dashboard.png)
+![Before SMOTE](images/before_smote.png)
+![After SMOTE](images/after_smote.png)
+![Feature Importance](images/feature_importance.png)
+![Random Forest](images/Random-forest.png)
 ## 🚀 Key Features
 
 - **Non‑Invasive Screening** – Instant risk assessment using standard smartphone photographs.
