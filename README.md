@@ -24,7 +24,8 @@ diagnostic confidence.
 <img width="903" height="819" alt="cbc-dashboard" src="https://github.com/user-attachments/assets/16216aed-30d5-4acf-a114-e3dfdee43668" />
 <img width="2055" height="2030" alt="dashboard" src="https://github.com/user-attachments/assets/4b63e88c-5f99-4259-a8f2-3c593b31b1bf" />
 <img width="921" height="533" alt="feature_importance" src="https://github.com/user-attachments/assets/fde818c5-48eb-48bb-bf73-e5bcdd5a8203" />
-<img width="1212" height="687" alt="Screenshot 2026-03-17 at 2 53 45 AM" src="https://github.com/user-attachments/assets/f0aeffce-2c91-4d3b-b162-d906c82ad45c" />
+<img width="1431" height="816" alt="Screenshot 2026-03-17 at 2 52 01 AM" src="https://github.com/user-attachments/assets/d7bd4dae-d146-435a-b6ab-4f7d80394468" />
+
 <img width="1212" height="687" alt="Screenshot 2026-03-17 at 2 53 45 AM" src="https://github.com/user-attachments/assets/6ed2b5c7-8e06-4f6d-9ada-c88b1be6960e" />
 
 <img width="1440" height="900" alt="fusion_model" src="https://github.com/user-attachments/assets/5afe8125-adf0-4ab4-ad01-25f8baf3e5fa" />
