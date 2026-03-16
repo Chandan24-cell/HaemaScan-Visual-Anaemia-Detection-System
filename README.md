@@ -17,13 +17,9 @@ Anemia affects billions of people worldwide, yet it often remains undiagnosed du
 diagnostic confidence.
 
 ### Demo & Screenshots
+<img width="1438" height="818" alt="Screenshot 2026-03-17 at 2 37 27 AM" src="https://github.com/user-attachments/assets/ad7887dd-09e2-46a8-80f0-99329202c9af" />
 
-![Dashboard](<dashboard.png/>
-)
-![Before SMOTE](images/before_smote.png)
-![After SMOTE](images/after_smote.png)
-![Feature Importance](images/feature_importance.png)
-![Random Forest](images/Random-forest.png)
+
 ## 🚀 Key Features
 
 - **Non‑Invasive Screening** – Instant risk assessment using standard smartphone photographs.
