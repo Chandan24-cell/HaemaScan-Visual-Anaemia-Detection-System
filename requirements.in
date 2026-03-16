@@ -1,0 +1,14 @@
+flask
+python-dotenv
+supabase
+numpy
+pandas
+scikit-learn
+pillow
+opencv-python
+opencv-contrib-python
+tensorflow==2.17.0
+scipy
+imutils
+google-generativeai
+joblib

@@ -5,8 +5,30 @@ import joblib
 from process_image import process_image
 import os
 from dotenv import load_dotenv
+import tensorflow as tf
+from PIL import Image
 
 load_dotenv()
+
+# Paths to your vision models
+VISION_MODEL_PATHS = {
+    'palm': 'models/vision/palm',
+    'nail': 'models/vision/nail',
+    'conjunctiva': 'models/vision/conjunctiva'
+}
+
+# Load models once at startup
+vision_models = {}
+for name, path in VISION_MODEL_PATHS.items():
+    try:
+        model = tf.saved_model.load(path)
+        # Get the default serving function
+        vision_models[name] = model.signatures['serving_default']
+        print(f"✅ Loaded {name} model")
+    except Exception as e:
+        print(f"❌ Failed to load {name} model: {e}")
+        vision_models[name] = None
+
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-secret-key")
@@ -20,6 +42,60 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 print("Loading model...")
 model = joblib.load('model/random_forest_classifier.pkl')
 print("Model loaded successfully.")
+
+
+def preprocess_image(image_file, target_size=(64, 64)):
+    """
+    Loads an image from an uploaded file, converts to RGB,
+    resizes, and normalizes to [0,1].
+    Returns a numpy array of shape (1, 64, 64, 3).
+    """
+    img = Image.open(image_file).convert('RGB')
+    img = img.resize(target_size)
+    img_array = np.array(img, dtype=np.float32) / 255.0
+    # Add batch dimension
+    img_array = np.expand_dims(img_array, axis=0)
+    return img_array
+
+
+def predict_single_model(model, image_array):
+    """
+    Runs inference on a single model.
+    Returns probability of anemia (between 0 and 1).
+    """
+    if model is None:
+        return None
+    # The model expects input with key 'input_layer' (from saved_model)
+    result = model(input_layer=tf.constant(image_array))
+    # Extract the output tensor (shape [1,1])
+    prob = result['output_0'].numpy()[0][0]
+    return float(prob)
+
+
+def predict_vision_models(palm_file, nail_file, conjunctiva_file):
+    """
+    Takes three uploaded image files, runs each through its respective model,
+    and returns the average probability and a binary prediction.
+    """
+    probs = []
+    for name, file in zip(['palm', 'nail', 'conjunctiva'],
+                           [palm_file, nail_file, conjunctiva_file]):
+        if file is None:
+            probs.append(None)
+            continue
+        img_array = preprocess_image(file)
+        model = vision_models.get(name)
+        prob = predict_single_model(model, img_array)
+        probs.append(prob)
+
+    # Filter out None (in case some uploads missing)
+    valid_probs = [p for p in probs if p is not None]
+    if not valid_probs:
+        return None, None  # No valid images
+
+    avg_prob = np.mean(valid_probs)
+    is_anemic = avg_prob > 0.5
+    return avg_prob, is_anemic
 
 
 @app.route('/login/email-password', methods=['GET', 'POST'])
@@ -179,6 +255,27 @@ def upload_image():
     except Exception as e:
         print("Error during image processing:", str(e))  # Debug: Exception details
         return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/vision-predict', methods=['POST'])
+def vision_predict():
+    palm = request.files.get('palm')
+    nail = request.files.get('nail')
+    conj = request.files.get('conjunctiva')
+
+    if not palm and not nail and not conj:
+        return jsonify({'error': 'At least one image required'}), 400
+
+    prob, pred = predict_vision_models(palm, nail, conj)
+    if prob is None:
+        return jsonify({'error': 'Model inference failed'}), 500
+
+    return jsonify({
+        'success': True,  # Add this line
+        'probability': prob,
+        'prediction': 'Anemic' if pred else 'Not Anemic',
+        'confidence': prob if pred else 1 - prob
+    })
 
 
 if __name__ == "__main__":
