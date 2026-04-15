@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anemia Detection System | Login</title>
+
+  <!-- Load CSS via Flask -->
+  <link rel="stylesheet" href="/static/style_v2.css">
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <h1 class="title">
+        🩸 Anemia Detection<br />System
+      </h1>
+
+      <p class="subtitle">Secure Login</p>
+
+      <form method="POST">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+
+      <div class="divider">OR</div>
+
+      <a href="{{ url_for('login_google') }}" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo">
+        Sign in with Google
+      </a>
+
+    </div>
+  </div>
+</body>
+</html>
